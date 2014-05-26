@@ -1,4 +1,4 @@
-resty-mean-stack
+Resty MEAN Stack
 ================
 
-Basic Meanstack starter-kit with a simple RESTfull API
+Basic MEAN stack starter-kit with a simple RESTfull API
