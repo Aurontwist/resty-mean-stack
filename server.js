@@ -34,7 +34,7 @@ router.use(function(req, res, next){
 
 
 router.get('/', function(req,res){
-    res.json({message : 'hooray! welcome to our api!'});
+    res.json({message : 'GreatT It Works!'});
 });
 
 router.route('/users')
@@ -44,7 +44,7 @@ router.route('/users')
 
         user.save(function(err){
             if(err) res.send(err);
-            res.json({message : "User Created!"});
+            res.json({message : "User "+ user.name +" Created!"});
         });
     })
     .get(function(req, res){
