@@ -1,0 +1,16 @@
+<div class="jumbotron text-center">
+	<h1>Nerds and Proud</h1>
+
+	<p>{{ tagline }}</p>
+
+
+</div>
+
+		<ul>
+			<li ng-repeat="geek in geeks">
+				{{ geek.name }}
+			</li>
+		</ul>
+<label for="nerdname">Name of the new Nerd:</label>
+<input id="nerdname" ng-model="newNerdName" type="text" />
+<button ng-click="addNerd(newNerdName)">Add Nerd</button>
