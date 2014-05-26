@@ -5,12 +5,34 @@
 
 
 </div>
+		<b>Number of users: {{ nerds.length }}</b>
+<table class="table table-hover">
+	<thead>
+	<tr>
+		<th>#</th>
+		<th>Created at</th>
+		<th>Name</th>
+		<th>Edit</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="nerd in nerds">
 
-		<ul>
-			<li ng-repeat="geek in geeks">
-				{{ geek.name }}
-			</li>
-		</ul>
-<label for="nerdname">Name of the new Nerd:</label>
-<input id="nerdname" ng-model="newNerdName" type="text" />
-<button ng-click="addNerd(newNerdName)">Add Nerd</button>
+		<td>{{ nerd._id }}</td>
+		<td>{{ nerd.creationDate | date : 'yyyy-MM-dd HH:mm' }}</td>
+		<td>{{ nerd.name }}</td>
+		<td><button ng-click="deleteNerd($index)">Delete</button></td>
+
+	</tr>
+
+	</tbody>
+</table>
+
+<form name="addUserForm" novalidate>
+
+	<label for="nerdname">Name of the new Nerd:</label>
+	<input id="nerdname" ng-model="newNerdName" name="name" type="text" />
+	<button ng-click="addNerd(newNerdName)">Add Nerd</button>
+
+</form>
+

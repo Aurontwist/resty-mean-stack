@@ -1,20 +1,15 @@
+var express = require('express');
+var router = express.Router();
+
 module.exports = function(app){
-    // Server routes =========================
 
-    // API route =============================
+    router
+        .get( /(?!^\/api).*/ ,  function(req, res){
+            res.sendfile('./public/index.html', function(err){
+                if(err) res.send(err);
+            })
+        });
 
-    app.get('/api/nerds',  function(req, res){
-           Nerd.find(function(err, nerds){
+    app.use('/' , router);
 
-               if(err) res.send(err); // if err
-
-               res.json(nerds); // return all nerds in json format
-           });
-    });
-
-    // frontend routes ======================
-
-    app.get('*', function(req, res){
-        res.sendfile('./public/index.html'); // load our public/index.html file
-    });
 };
